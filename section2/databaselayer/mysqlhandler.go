@@ -11,7 +11,7 @@ type MySQLHandler struct {
 }
 
 func NewMySQLHandler(connection string) (*MySQLHandler, error) {
-	db, err = sql.Open("mysql", connection)
+	db, err := sql.Open("mysql", connection)
 
 	return &MySQLHandler{
 		SQLHandler: &SQLHandler{

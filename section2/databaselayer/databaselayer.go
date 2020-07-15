@@ -33,7 +33,7 @@ func GetDatabaseHandler(dbtype uint8, connection string) (DinoDBHandler, error) 
 	case MYSQL:
 		return NewMySQLHandler(connection)
 	case MONGODB:
-		return NewMongoddbHandler(connection)
+		return NewMongodbHandler(connection)
 	case SQLITE:
 		return NewSQLiteHandler(connection)
 	case POSTGRESQL:

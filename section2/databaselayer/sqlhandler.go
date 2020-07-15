@@ -31,7 +31,7 @@ func (handler *SQLHandler) AddAnimal(a Animal) error {
 }
 
 func (handler *SQLHandler) UpdateAnimal(a Animal, nname string) error {
-	_, err := handler.Exec(fmt.sprintf("Update Animals set Animal_type = '%s' ,nickname = '%s', zone = %d, age=%d, where nickname='%s'", a.AnimalType, a.Nickname, a.Zone, a.Age, nname))
+	_, err := handler.Exec(fmt.Sprintf("Update Animals set Animal_type = '%s' ,nickname = '%s', zone = %d, age=%d, where nickname='%s'", a.AnimalType, a.Nickname, a.Zone, a.Age, nname))
 	return err
 }
 
@@ -43,7 +43,7 @@ func (handler *SQLHandler) sendQuery(q string) ([]Animal, error) {
 	}
 	for rows.Next() {
 		a := Animal{}
-		err := rows.Scan(&a.ID, &a.AnimalType, &a.NickName, &a.Zone, &a.Age)
+		err := rows.Scan(&a.ID, &a.AnimalType, &a.Nickname, &a.Zone, &a.Age)
 		if err != nil {
 			log.Println(err)
 			continue
